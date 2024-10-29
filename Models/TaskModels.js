@@ -1,4 +1,3 @@
-// import mongoose from 'mongoose';
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema(
@@ -20,14 +19,3 @@ const taskSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("Task", taskSchema);
-// export default mongoose.model("Post", PostSchema);
-
-// const mongoose = require('mongoose');
-
-// const PostSchema = new mongoose.Schema({
-//   title: String,
-//   description: String,
-//   imageUrl: String
-// });
-
-// module.exports = mongoose.model('Post', PostSchema);

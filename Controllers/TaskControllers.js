@@ -1,5 +1,6 @@
 const TaskModel = require("../Models/TaskModels");
 
+// get tasks
 module.exports.getTasks = async (req, res) => {
   try {
     const tasks = await TaskModel.find();
@@ -11,6 +12,7 @@ module.exports.getTasks = async (req, res) => {
   }
 };
 
+// add a task
 module.exports.saveTask = (req, res) => {
   try {
     const { task, description, image } = req.body;
@@ -22,6 +24,9 @@ module.exports.saveTask = (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+
+// update a task
 module.exports.updateTask = (req, res) => {
   try {
     const { id } = req.params;
@@ -33,6 +38,9 @@ module.exports.updateTask = (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+
+// delete a task
 module.exports.deleteTask = (req, res) => {
   try {
     const { id } = req.params;
